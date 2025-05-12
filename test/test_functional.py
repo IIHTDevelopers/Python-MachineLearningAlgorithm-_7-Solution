@@ -66,15 +66,15 @@ class TestFruitModel(unittest.TestCase):
             )
 
             if correct_split:
-                self.test_obj.yakshaAssert("TestSplitData", True, "functional")
-                print("TestSplitData = Passed")
+                self.test_obj.yakshaAssert("TestSplitData_fruit", True, "functional")
+                print("TestSplitData_fruit = Passed")
             else:
-                self.test_obj.yakshaAssert("TestSplitData", False, "functional")
-                print("TestSplitData = Failed")
+                self.test_obj.yakshaAssert("TestSplitData_fruit", False, "functional")
+                print("TestSplitData_fruit = Failed")
 
         except Exception as e:
-            self.test_obj.yakshaAssert("TestSplitData", False, "functional")
-            print(f"TestSplitData = Failed | Exception: {e}")
+            self.test_obj.yakshaAssert("TestSplitData_fruit", False, "functional")
+            print(f"TestSplitData_fruit = Failed | Exception: {e}")
     def test_train_and_save_model(self):
         try:
             import os
@@ -96,18 +96,18 @@ class TestFruitModel(unittest.TestCase):
             has_estimators = hasattr(model, "estimators_") and len(model.estimators_) > 0
 
             if file_exists and is_correct_name and is_rf_model and has_estimators:
-                self.test_obj.yakshaAssert("TestTrainAndSaveModel", True, "functional")
-                print("TestTrainAndSaveModel = Passed")
+                self.test_obj.yakshaAssert("TestTrainAndSaveModel_fruit", True, "functional")
+                print("TestTrainAndSaveModel_fruit = Passed")
             else:
-                self.test_obj.yakshaAssert("TestTrainAndSaveModel", False, "functional")
-                print("TestTrainAndSaveModel = Failed")
+                self.test_obj.yakshaAssert("TestTrainAndSaveModel_fruit", False, "functional")
+                print("TestTrainAndSaveModel_fruit = Failed")
 
             # Optional: Keep or clean up
             # os.remove(model_path)
 
         except Exception as e:
-            self.test_obj.yakshaAssert("TestTrainAndSaveModel", False, "functional")
-            print(f"TestTrainAndSaveModel = Failed | Exception: {e}")
+            self.test_obj.yakshaAssert("TestTrainAndSaveModel_fruit", False, "functional")
+            print(f"TestTrainAndSaveModel_fruit = Failed | Exception: {e}")
     def test_load_model(self):
         try:
             import os
@@ -142,7 +142,7 @@ class TestFruitModel(unittest.TestCase):
             self.test_obj.yakshaAssert("TestLoadModel", False, "functional")
             print(f"TestLoadModel = Failed | Exception: {e}")
 
-    def test_predict_from_json(self):
+    def test_predict_from_json_fruit(self):
         try:
             # Load a trained model
             model = fruit.load_model("fruit_rf_model.pkl")
@@ -154,15 +154,15 @@ class TestFruitModel(unittest.TestCase):
             expected_prediction = "orange"
 
             if prediction == expected_prediction:
-                self.test_obj.yakshaAssert("TestPredictFromJson", True, "functional")
-                print("TestPredictFromJson = Passed")
+                self.test_obj.yakshaAssert("TestPredictFromJson_fruit", True, "functional")
+                print("TestPredictFromJson_fruit = Passed")
             else:
-                self.test_obj.yakshaAssert("TestPredictFromJson", False, "functional")
-                print(f"TestPredictFromJson = Failed | Expected: {expected_prediction}, Got: {prediction}")
+                self.test_obj.yakshaAssert("TestPredictFromJson_fruit", False, "functional")
+                print(f"TestPredictFromJson_fruit = Failed | Expected: {expected_prediction}, Got: {prediction}")
 
         except Exception as e:
-            self.test_obj.yakshaAssert("TestPredictFromJson", False, "functional")
-            print(f"TestPredictFromJson = Failed | Exception: {e}")
+            self.test_obj.yakshaAssert("TestPredictFromJson_fruit", False, "functional")
+            print(f"TestPredictFromJson_fruit = Failed | Exception: {e}")
     def test_load_and_preprocess_data(self):
         try:
             # Load data
