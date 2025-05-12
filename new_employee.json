@@ -1,0 +1,16 @@
+{
+  "employee": {
+    "department": "Sales & Marketing",
+    "region": "region_2",
+    "education": "Bachelor's",
+    "gender": "male",
+    "recruitment_channel": "sourcing",
+    "no_of_trainings": 2,
+    "age": 30,
+    "previous_year_rating": 4.0,
+    "length_of_service": 5,
+    "KPIs_met >80%": 1,
+    "awards_won?": 0,
+    "avg_training_score": 77
+  }
+}
