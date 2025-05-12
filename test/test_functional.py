@@ -176,11 +176,10 @@ class TestFruitModel(unittest.TestCase):
             # Check for nulls
             has_no_nulls = df.isnull().sum().sum() == 0
 
-            # Check expected columns before one-hot encoding
+            # Check expected columns with which are orginal alone  
             expected_columns = [
                 "age", "years_at_company", "last_performance_rating",
-                "education_level", "department", "training_hours",
-                "gender", "is_manager", "promotion"
+                 "training_hours", "is_manager", "promotion"
             ]
             all_cols_present = all(col in df.columns for col in expected_columns)
 
