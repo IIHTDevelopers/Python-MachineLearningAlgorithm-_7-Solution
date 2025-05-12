@@ -151,7 +151,7 @@ class TestFruitModel(unittest.TestCase):
             prediction = fruit.predict_from_json(model, json_file="fruit_item.json")
 
             # Expected result
-            expected_prediction = "orange"
+            expected_prediction = "Orange"
 
             if prediction == expected_prediction:
                 self.test_obj.yakshaAssert("TestPredictFromJson_fruit", True, "functional")
